@@ -18,7 +18,7 @@ db.sequelize.sync().then(() => {
 
 //set up the app
 const app = express();
-
+const PORT = process.env.PORT || 5000;
 // middleware
 app.use(express.static("public"));
 // for bodyparser
@@ -40,7 +40,7 @@ require("./routes/htmlRoutes")(app, passport);
 //load passport strategies
 require('./config/passport')(passport, db.User);
 
-app.listen(5000, function (err) {
+app.listen(PORT, function (err) {
 
     if (!err)
         console.log("Site is live");
