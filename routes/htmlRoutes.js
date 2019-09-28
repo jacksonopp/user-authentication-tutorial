@@ -1,4 +1,8 @@
 module.exports = function (app, passport) {
+    app.get("/", function (req, res) {
+        res.render("index");
+    })
+
     //render signup page
     app.get("/signup", function (req, res) {
         res.render("signup");
